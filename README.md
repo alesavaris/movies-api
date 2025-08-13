@@ -18,7 +18,17 @@ A API oferece a seguinte funcionalidade principal:
 
 ---
 
-## 🛠️ Tecnologias e Requisitos
+## 🛠️ Tecnologias
+
+- **Java 21+**
+- **Lombok**
+- **Gson**
+- **Spring Boot**
+- **Spring Data JPA**
+- **Banco de Dados em Memória H2**
+- **JUnit** para testes de integração
+
+---
 
 ### Requisitos Funcionais
 
@@ -36,6 +46,42 @@ A API oferece a seguinte funcionalidade principal:
   - Dispensa instalação externa e simplifica a execução do projeto.
 
 ---
+
+## 📂 Estrutura do Projeto
+
+```text
+movies-api/
+├── src/
+│ ├── main/
+│ │ ├── java/ # Código-fonte Java
+│ │ └── resources/
+│ │ ├── application.properties # Configuração H2 e Spring Boot
+│ │ └── movies.csv # Lista de filmes e produtores
+│ └── test/
+│ └── java/ # Testes de integração
+├── pom.xml # Dependências Maven
+└── README.md # Este arquivo
+```
+---
+
+## ⚙️ Como Executar
+
+### Pré-requisitos
+
+- **Java 21+**
+- **Maven 3.8+**
+
+```bash
+# Clonar repositório
+git clone https://github.com/alesavaris/movies-api.git
+
+# Entrar no diretório do projeto
+cd movies-api
+
+# Compilar e executar
+mvn spring-boot:run
+
+```
 
 ## 📄 Licença
 
