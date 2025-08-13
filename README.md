@@ -81,7 +81,33 @@ cd movies-api
 # Compilar e executar
 mvn spring-boot:run
 
+# Executar os testes
+mvn test
+
 ```
+
+A API estará disponível em: [http://localhost:8080]
+
+## 🗄 Banco de Dados H2
+
+A aplicação usa um banco de dados **H2 em memória**.  
+Ao iniciar, os dados do arquivo `movies.csv` são carregados automaticamente.
+
+**Console H2 disponível em:** [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
+
+**Configuração padrão:**
+- **JDBC URL:** `jdbc:h2:mem:movies`
+- **Usuário:** `adm`
+- **Senha:** `123`
+
+## 📌 Endpoints Principais
+
+- **GET /movies**  
+  Retorna a lista completa de filmes indicados e vencedores da categoria Pior Filme.
+
+- **GET /movies/winners**  
+  Retorna o produtor com o maior intervalo entre duas vitórias consecutivas e o produtor com o menor intervalo.
+
 
 ## 📄 Licença
 
