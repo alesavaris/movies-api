@@ -31,12 +31,18 @@ public class MovieIntegrationTest {
     }
 
     @Test
-    void mustValidateTheBasicStructureOfTheJson() throws Exception {
+    void mustValidateTheStructureOfTheJson() throws Exception {
         mockMvc.perform(get("/movies/winners"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.min").exists())
                 .andExpect(jsonPath("$.min").isArray())
-                .andExpect(jsonPath("$.max").exists())
-                .andExpect(jsonPath("$.max").isArray());
+                .andExpect(jsonPath("$.min[0].producer").value("Joel Silver"))
+                .andExpect(jsonPath("$.min[0].interval").value(1))
+                .andExpect(jsonPath("$.min[0].previousWin").value(1990))
+                .andExpect(jsonPath("$.min[0].followingWin").value(1991))
+                .andExpect(jsonPath("$.max").isArray())
+                .andExpect(jsonPath("$.max[0].producer").value("Matthew Vaughn"))
+                .andExpect(jsonPath("$.max[0].interval").value(13))
+                .andExpect(jsonPath("$.max[0].previousWin").value(2002))
+                .andExpect(jsonPath("$.max[0].followingWin").value(2015));
     }
 }

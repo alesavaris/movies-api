@@ -35,7 +35,7 @@ public class WinnersUseCase {
         List<MovieDTO> winners = this.moviesPort.getMovies(true);
         Map<String, List<Integer>> awardsByProducers = new HashMap<>();
         for (MovieDTO movie : winners) {
-            for (String producer: movie.getProducers().split(",")){
+            for (String producer: movie.getProducers().split(",|\\s+and\\s+")){
                 awardsByProducers.computeIfAbsent(producer.trim(), k -> new ArrayList<>()).add(movie.getYear());
             }
         }
